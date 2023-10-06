@@ -42,11 +42,18 @@ val Typography = Typography(
         color = Color(0xFF2A2B2E),
     ),
 
-    labelMedium =  TextStyle(
+    labelMedium = TextStyle(
         fontSize = 14.sp,
         fontFamily = FontFamily(Font(R.font.inter_bold)),
         fontWeight = FontWeight(700),
         color = Color(0xFFFFFFFF),
+        textAlign = TextAlign.Center,
+    ),
+    labelLarge = TextStyle(
+        fontSize = 14.sp,
+        fontFamily = FontFamily(Font(R.font.inter_bold)),
+        fontWeight = FontWeight(700),
+        color = Color(0xFF000000),
         textAlign = TextAlign.Center,
     ),
 )

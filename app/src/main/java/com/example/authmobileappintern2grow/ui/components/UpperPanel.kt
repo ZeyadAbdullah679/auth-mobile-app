@@ -5,7 +5,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -23,12 +22,11 @@ import com.example.authmobileappintern2grow.R
 import com.example.authmobileappintern2grow.ui.theme.AuthMobileAppIntern2GrowTheme
 
 @Composable
-fun MainScreen(
+fun UpperPanel(
     @DrawableRes headerAvatar: Int,
     header: String,
 ) {
     Column(
-        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
@@ -60,6 +58,6 @@ fun MainScreen(
 @Composable
 fun MainScreenPreview() {
     AuthMobileAppIntern2GrowTheme {
-        MainScreen(headerAvatar = R.drawable.avatar, header = "Log in to your account")
+        UpperPanel(headerAvatar = R.drawable.avatar, header = "Log in to your account")
     }
 }

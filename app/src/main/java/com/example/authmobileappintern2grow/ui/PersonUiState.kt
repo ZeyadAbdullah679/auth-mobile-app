@@ -1,7 +1,9 @@
 package com.example.authmobileappintern2grow.ui
 
 data class PersonUiState(
-    val name: String,
+    val username: String,
     val email: String,
     val password: String,
+    val gender: String = "Male",
+    val isRememberMeChecked: Boolean = false
 )

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Auth Mobile App (Intern2Grow)</string>
+    <string name="log_in_to_your_account">Log in to your account</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="register">Register</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="have_a_problem">Have a problem?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="logout">Logout</string>
 </resources>
