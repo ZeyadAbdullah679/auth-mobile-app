@@ -61,7 +61,11 @@ fun RegisterScreen(
             onCheckedChange = { viewModel.onCheckBoxChange(it) },
             underlineText = R.string.have_a_problem
         )
-        ButtonComponent(text = R.string.register, onClick = { /*TODO*/ }, color = Color(0xFF007BFF))
+        ButtonComponent(
+            text = R.string.register,
+            onClick = onRegisterClick,
+            color = Color(0xFF007BFF)
+        )
         Box(modifier = Modifier.padding(start = 8.dp)) {
             TwoTextComponent(
                 checked = false,

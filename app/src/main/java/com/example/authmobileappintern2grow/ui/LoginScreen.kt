@@ -54,7 +54,7 @@ fun LoginScreen(
             onCheckedChange = { viewModel.onCheckBoxChange(it) },
             underlineText = R.string.forgot_password
         )
-        ButtonComponent(text = R.string.login, onClick = { /*TODO*/ }, color = Color(0xFF007BFF))
+        ButtonComponent(text = R.string.login, onClick = onLoginClick, color = Color(0xFF007BFF))
         Box(modifier = Modifier.padding(start = 8.dp)) {
             TwoTextComponent(
                 checked = false,
