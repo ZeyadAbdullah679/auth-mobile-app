@@ -22,7 +22,11 @@ import com.example.authmobileappintern2grow.ui.components.UpperPanel
 import com.example.authmobileappintern2grow.ui.theme.AuthMobileAppIntern2GrowTheme
 
 @Composable
-fun LoginScreen(viewModel: PersonViewModel) {
+fun LoginScreen(
+    viewModel: PersonViewModel,
+    onRegisterClick: () -> Unit,
+    onLoginClick: () -> Unit
+) {
     val uiState = viewModel.uiState.value
     Column(
         Modifier.fillMaxSize()
@@ -57,6 +61,7 @@ fun LoginScreen(viewModel: PersonViewModel) {
                 onCheckedChange = {},
                 rememberMe = false,
                 underlineText = R.string.register,
+                onClickSecondText = onRegisterClick,
                 horizontalArrangement = Arrangement.Start
             )
         }
@@ -67,6 +72,6 @@ fun LoginScreen(viewModel: PersonViewModel) {
 @Composable
 fun LoginScreenPreview() {
     AuthMobileAppIntern2GrowTheme {
-        LoginScreen(viewModel = PersonViewModel())
+        LoginScreen(viewModel = PersonViewModel(), { }, { })
     }
 }

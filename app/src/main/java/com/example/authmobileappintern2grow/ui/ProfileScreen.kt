@@ -18,7 +18,7 @@ import com.example.authmobileappintern2grow.ui.components.UpperPanel
 import com.example.authmobileappintern2grow.ui.theme.AuthMobileAppIntern2GrowTheme
 
 @Composable
-fun ProfileScreen(viewModel: PersonViewModel) {
+fun ProfileScreen(viewModel: PersonViewModel, onClickLogout: () -> Unit) {
     val uiState = viewModel.uiState.value
     Column(
         Modifier.fillMaxSize()
@@ -61,6 +61,6 @@ fun ProfileScreen(viewModel: PersonViewModel) {
 @Composable
 fun ProfileScreenPreview() {
     AuthMobileAppIntern2GrowTheme {
-        ProfileScreen(viewModel = PersonViewModel())
+        ProfileScreen(viewModel = PersonViewModel()) { /*TODO*/ }
     }
 }
