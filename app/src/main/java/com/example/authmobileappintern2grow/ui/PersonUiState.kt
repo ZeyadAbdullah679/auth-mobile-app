@@ -5,7 +5,6 @@ data class PersonUiState(
     val email: String,
     val password: String,
     val gender: String = "Male",
+    val image: String,
     val isRememberMeChecked: Boolean = false,
-    val isLogin: Boolean = false,
-    val isRegister: Boolean = false
 )

@@ -67,6 +67,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${lifecycle_version}")
+    implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:${lifecycle_version}")
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -77,7 +78,19 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
+    androidTestImplementation("junit:junit:4.13.2")
 
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-tooling")
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+
+    // UI Testing Dependencies (Espresso)
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+
+    // Test Coverage (Optional - Jacoco)
+    debugImplementation("org.jacoco:org.jacoco.core:0.8.7")
+    implementation("com.google.code.gson:gson:2.10")
+
 }

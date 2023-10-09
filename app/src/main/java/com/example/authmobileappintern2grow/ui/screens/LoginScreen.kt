@@ -1,4 +1,4 @@
-package com.example.authmobileappintern2grow.ui
+package com.example.authmobileappintern2grow.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,6 +14,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.authmobileappintern2grow.R
+import com.example.authmobileappintern2grow.ui.PersonDataState
+import com.example.authmobileappintern2grow.ui.PersonViewModel
 import com.example.authmobileappintern2grow.ui.components.ButtonComponent
 import com.example.authmobileappintern2grow.ui.components.NormalTextFieldComponent
 import com.example.authmobileappintern2grow.ui.components.PasswordTextFieldComponent
@@ -25,13 +27,20 @@ import com.example.authmobileappintern2grow.ui.theme.AuthMobileAppIntern2GrowThe
 fun LoginScreen(
     viewModel: PersonViewModel,
     onRegisterClick: () -> Unit,
-    onLoginClick: () -> Unit
+    onLoginClick: () -> Unit,
+    onLoginSuccess: () -> Unit,
+    onLoginFail: () -> Unit,
 ) {
     val uiState = viewModel.uiState.value
+    if (viewModel.dataState.value == PersonDataState.Success(uiState)) {
+        onLoginSuccess()
+    } else if (viewModel.dataState.value == PersonDataState.Error) {
+        onLoginFail()
+    }
     Column(
         Modifier.fillMaxSize()
     ) {
-        UpperPanel(headerAvatar = R.drawable.avatar, header = "Log in to your account")
+        UpperPanel(header = "Log in to your account")
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -72,6 +81,6 @@ fun LoginScreen(
 @Composable
 fun LoginScreenPreview() {
     AuthMobileAppIntern2GrowTheme {
-        LoginScreen(viewModel = PersonViewModel(), { }, { })
+        LoginScreen(viewModel = PersonViewModel(), { }, { }, { }, {})
     }
 }

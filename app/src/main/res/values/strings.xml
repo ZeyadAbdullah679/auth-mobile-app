@@ -10,4 +10,7 @@
     <string name="have_a_problem">Have a problem?</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="logout">Logout</string>
+    <string name="loading">Loading</string>
+    <string name="check_your_internet_connection">Check Your Internet Connection</string>
+    <string name="profile_avatar">Profile Avatar</string>
 </resources>

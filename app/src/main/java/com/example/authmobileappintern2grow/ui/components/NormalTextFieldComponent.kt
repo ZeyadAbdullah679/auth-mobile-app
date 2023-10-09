@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -24,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import com.example.authmobileappintern2grow.R
 import com.example.authmobileappintern2grow.ui.theme.AuthMobileAppIntern2GrowTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NormalTextFieldComponent(
     label: String,
@@ -49,17 +47,21 @@ fun NormalTextFieldComponent(
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = keyboardType
             ),
-            trailingIcon = {
-                IconButton(
-                    onClick = { onValueChange("") },
-                ) {
-                    if (value != "") {
-                        Icon(
-                            painter = painterResource(id = R.drawable.x),
-                            contentDescription = "Clear",
-                        )
+            trailingIcon = if (!readOnly) {
+                {
+                    IconButton(
+                        onClick = { onValueChange("") },
+                    ) {
+                        if (value != "") {
+                            Icon(
+                                painter = painterResource(id = R.drawable.x),
+                                contentDescription = "Clear",
+                            )
+                        }
                     }
                 }
+            } else {
+                {}
             }
         )
     }
@@ -73,6 +75,6 @@ fun NormalTextFieldPreview() {
         var x by remember {
             mutableStateOf("")
         }
-        NormalTextFieldComponent("Email", x, {x = it},KeyboardType.Email)
+        NormalTextFieldComponent("Email", x, { x = it }, KeyboardType.Email)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.authmobileappintern2grow.ui
+package com.example.authmobileappintern2grow.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,6 +12,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.authmobileappintern2grow.R
+import com.example.authmobileappintern2grow.ui.PersonViewModel
 import com.example.authmobileappintern2grow.ui.components.ButtonComponent
 import com.example.authmobileappintern2grow.ui.components.NormalTextFieldComponent
 import com.example.authmobileappintern2grow.ui.components.UpperPanel
@@ -23,7 +24,7 @@ fun ProfileScreen(viewModel: PersonViewModel, onClickLogout: () -> Unit) {
     Column(
         Modifier.fillMaxSize()
     ) {
-        UpperPanel(headerAvatar = R.drawable.avatar_image, header = uiState.username)
+        UpperPanel(imageUrl = uiState.image, header = uiState.username)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -53,7 +54,7 @@ fun ProfileScreen(viewModel: PersonViewModel, onClickLogout: () -> Unit) {
                 keyboardType = KeyboardType.Email,
             )
         }
-        ButtonComponent(text = R.string.logout, onClick = { /*TODO*/ }, color = Color(0xFFDC3545))
+        ButtonComponent(text = R.string.logout, onClick = onClickLogout, color = Color(0xFFDC3545))
     }
 }
 
